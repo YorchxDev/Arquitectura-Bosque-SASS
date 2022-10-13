@@ -1,0 +1,65 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.modelo {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+    @include m.tablet { 
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 5rem;
+
+        .modelo-contenido {
+            padding: 5rem;
+        }
+    }
+
+    .modelo-contenido {
+        background-color: v.$blanco;
+        padding: 2rem;
+    }
+}
+
+.basico {
+    background-image: url(/build/img/modelo_basico.jpg);
+
+    @include m.tablet {
+        background-position: 100% 25px;
+
+        .modelo-contenido {
+            grid-row: 1 / 2;
+            padding: 2rem 2rem 2rem 0;
+        }
+    }
+}
+
+.premier {
+    background-image: url(/build/img/modelo_premier.jpg);
+
+    @include m.tablet {
+        background-position: 0 0;
+
+        .modelo-contenido {
+            grid-column: 2 / 3;
+            padding: 0 2rem 2rem 2rem;
+        }
+    }
+}
+
+.elite {
+    background-image: url(/build/img/modelo_elite.jpg);
+
+    @include m.tablet {
+        background-position: top right;
+        margin-top: 0;
+
+        .modelo-contenido {
+            padding: 0 2rem 2rem 0;
+        }
+    }
+}
+
+

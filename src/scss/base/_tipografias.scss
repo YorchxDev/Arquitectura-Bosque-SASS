@@ -1,0 +1,27 @@
+@use 'src/scss/base/variables' as v;
+
+h1, h2, h3 {
+    font-weight: 900;
+    margin: 1rem 0 4rem 0;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 5.8rem;
+}
+
+h3 {
+    font-size: 5rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+a {
+    text-decoration: none;
+}

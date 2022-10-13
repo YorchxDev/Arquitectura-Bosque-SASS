@@ -1,0 +1,109 @@
+@use 'src/scss/base/variables' as v;
+@use 'src/scss/base/mixins' as m;
+
+.footer {
+    min-height: 60rem;
+    background-image: url(/build/img/footer_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include m.tablet { 
+        min-height: 30rem 
+    }
+
+    .footer-barra {
+
+        @include m.tablet { 
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+    }
+
+    .nombre-sitio {
+        color: v.$blanco;
+        text-align: center;
+        font-weight: 300;
+        font-size: 3rem;
+
+        @include m.tablet { 
+            text-align: left;
+            font-size: 5rem;
+        }
+
+        span {
+            font-weight: 900;
+        }
+    }
+
+    .contacto {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include m.tablet { 
+            align-items: flex-end;
+        }
+    }
+
+    .telefono {
+        display: flex;
+        justify-content: center;
+
+        color: v.$blanco;
+        font-size: 2rem;
+        font-weight: 700;
+
+        &::before {
+            content: '';
+            background-image: url(/build/img/telefono.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            display: block;
+            height: 4rem;
+            width: 4rem;
+            margin-right: 1rem;
+        }
+    }
+
+    .navegacion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 2rem;
+
+        @include m.tablet { 
+            flex-direction: row;
+            margin-top: 0;
+        }
+
+        .link {
+            color: v.$blanco;
+            font-size: 2rem;
+            padding: 1rem 2rem;
+            width: 100%;
+            text-align: center;
+            transition: background-color .3s;
+
+            &:hover {
+                background-color: rgb(255 255 255 / .5);
+                color: v.$negro;
+            }
+        }
+    }
+
+    p {
+        padding: 1.5rem 0;
+        background-color: v.$gris;
+        text-align: center;
+        color: v.$blanco;
+        margin: 0;
+    }
+}
